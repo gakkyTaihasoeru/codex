@@ -1,13 +1,49 @@
+<p align="right"><a href="README.en.md">English</a></p>
 # Discord RSS Bot
 
-このプロジェクトの README は英語版と日本語版が用意されています。`switch_readme.sh` スクリプトを使うと `README.md` を好きな言語に切り替えられます。
+このリポジトリには、RSSフィードから取得した更新をDiscordのチャンネルに投稿するシンプルなボットが含まれています。
 
-- [English README](README.en.md)
-- [日本語 README](README.ja.md)
+## 必要条件
 
-例:
+- Python 3.8以上
+- `requirements.txt` に記載された依存関係
+- Docker（コンテナ環境を使用する場合は任意）
+
+## セットアップ
+
+1. 依存関係をインストールします:
 
 ```bash
-./switch_readme.sh en   # 英語版に切り替え
-./switch_readme.sh ja   # 日本語版に切り替え
+pip install -r requirements.txt
+```
+
+2. Discordボットを作成し、サーバーに招待します。ボットのトークンとRSSを投稿するチャンネルIDを取得します。
+
+3. 以下の環境変数を設定します:
+
+- `DISCORD_TOKEN` – ボットのトークン
+- `CHANNEL_ID` – 投稿先チャンネルのID
+- `RSS_FEED_URL` – 監視するRSSフィードのURL
+
+4. ボットをローカルで実行します:
+
+```bash
+python rss_bot.py
+```
+
+### Docker で実行する場合
+
+1. `.env` ファイルを作成し、`DISCORD_TOKEN` などの環境変数を設定します。サンプルとして `.env.example` を用意しています。
+2. Docker イメージをビルドし、コンテナを起動します:
+
+```bash
+docker compose up -d
+```
+
+コンテナが起動すると、5 分ごとに RSS フィードを確認して新しいエントリを Discord チャンネルへ投稿します。
+
+## README の言語切り替え
+
+```bash
+./switch_readme.sh en
 ```

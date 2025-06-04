@@ -1,3 +1,4 @@
+<p align="right"><a href="README.ja.md">日本語</a></p>
 # Discord RSS Bot
 
 This repository contains a simple Discord bot that posts updates from an RSS feed into a channel.
