@@ -42,8 +42,3 @@ docker compose up -d
 
 コンテナが起動すると、5 分ごとに RSS フィードを確認して新しいエントリを Discord チャンネルへ投稿します。
 
-## README の言語切り替え
-
-```bash
-./switch_readme.sh en
-```
