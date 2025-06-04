@@ -41,4 +41,3 @@ docker compose up -d
 ```
 
 Once running, the container checks the RSS feed every five minutes and posts new entries to the Discord channel.
-
