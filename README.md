@@ -6,6 +6,7 @@ This repository contains a simple Discord bot that posts updates from an RSS fee
 
 - Python 3.8+
 - Dependencies listed in `requirements.txt`
+- Docker (optional if using the container setup)
 
 ## Setup
 
@@ -23,10 +24,19 @@ pip install -r requirements.txt
 - `CHANNEL_ID` – the ID of the channel to post in
 - `RSS_FEED_URL` – the RSS feed URL to monitor
 
-4. Run the bot:
+4. Run the bot locally:
 
 ```bash
 python rss_bot.py
 ```
 
-The bot will check the RSS feed every five minutes and send new entries to the specified channel.
+### Docker で実行する場合
+
+1. `.env` ファイルを作成し、`DISCORD_TOKEN` などの環境変数を設定します。サンプルとして `.env.example` を用意しています。
+2. Docker イメージをビルドし、コンテナを起動します:
+
+```bash
+docker compose up -d
+```
+
+コンテナが起動すると、5 分ごとに RSS フィードを確認して新しいエントリを Discord チャンネルへ投稿します。
