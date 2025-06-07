@@ -1,2 +1,2 @@
-discord.py
-feedparser
+discord.py==2.3.2
+feedparser==6.0.10
